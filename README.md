@@ -1,43 +1,13 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
-
 # Document Management System
 
-A NestJS-based backend service for managing users and documents with ingestion capabilities.
-
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
-## Project Overview
-
-This is a backend service built with NestJS that provides user management, document management, and document ingestion capabilities. The system supports authentication, role-based access control, and scalable document processing.
-
-## Prerequisites
-
-- Node.js >= 16.20.1
+### Prerequisites
+Make sure you have these installed:
+- Node.js (version 16.20.1 or higher)
 - MongoDB
 - Redis
-- Docker (for production deployment)
+- Docker (for Docker deployment)
 
-## Installation
+### Quick Setup
 
 1. Clone the repository
 2. Install dependencies:
@@ -45,12 +15,12 @@ This is a backend service built with NestJS that provides user management, docum
 npm install
 ```
 
-3. Copy environment file:
+3. Copy the environment file:
 ```bash
 cp .env.example .env
 ```
 
-4. Update .env with your configuration:
+4. Update your `.env` file with your configuration:
 - MongoDB connection string
 - Redis connection details
 - JWT secret
@@ -58,53 +28,56 @@ cp .env.example .env
 
 ## Running the Application
 
-### Development
+### Option 1: Using Docker (Recommended)
+
+1. Ensure Docker and Docker Compose are installed
+2. Start all services:
 ```bash
-npm run start:dev  # Start in development mode with hot reload
+docker-compose up -d
 ```
 
-### Production
+3. Access the application at `http://localhost:3000`
+4. Access the API documentation at `http://localhost:3000/api`
+
+### Option 2: Manual Setup
+
+1. Install dependencies:
 ```bash
-npm run start:prod  # Start in production mode
+npm install
 ```
 
-### Docker
+2. Start the application in development mode:
 ```bash
-docker-compose up -d  # Start all services using Docker
+npm run start:dev
+```
+
+3. Start the application in production mode:
+```bash
+npm run start:prod
 ```
 
 ## API Documentation
 
-The API is documented using Swagger/OpenAPI. Access the documentation at:
-
+The API is documented using Swagger. You can access it at:
 ```
 http://localhost:3000/api
 ```
 
 ## Testing
 
+Run unit tests:
 ```bash
-# Unit tests
-$ npm run test
-
-# E2E tests
-$ npm run test:e2e
-
-# Test coverage
-$ npm run test:cov
+npm run test
 ```
 
-## Test
-
+Run end-to-end tests:
 ```bash
-# unit tests
-$ npm run test
+npm run test:e2e
+```
 
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+Check test coverage:
+```bash
+npm run test:cov
 ```
 
 ## Project Structure
@@ -164,21 +137,3 @@ docker-compose up -d
 ```
 http://localhost:3000
 ```
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
